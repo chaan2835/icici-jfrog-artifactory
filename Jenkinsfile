@@ -44,7 +44,7 @@ pipeline{
       steps{
         script{
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, 
-                     reportDir: '/root/.jenkins/workspace/icici-build-sonartest-docker/target/funds-1.0-SNAPSHOT/index.html', reportFiles: 'index.html',
+                     reportDir: '/target/funds-1.0-SNAPSHOT/index.html', reportFiles: 'index.html',
                      reportName: 'Sonar-Html Report', reportTitles: '', useWrapperFileDirectly: true])
         }
       }
