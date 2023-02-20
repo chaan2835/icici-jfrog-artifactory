@@ -47,7 +47,7 @@ pipeline{
         sh 'sonar-scanner'*/
         script{
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, includes: '/target/funds-1.0-SNAPSHOT/index.html', 
-                     keepAll: true , reportDir: 'target/funds-1.0-SNAPSHOT',reportFiles: 'index.html', reportName: 'SONAR-HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+                     keepAll: true , reportDir: 'target/funds-1.0-SNAPSHOT',reportFiles: 'index.html', reportName: 'SONAR-HTML-Report', reportTitles: '', useWrapperFileDirectly: true])
         }
       }
     }
