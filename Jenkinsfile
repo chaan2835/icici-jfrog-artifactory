@@ -42,13 +42,13 @@ pipeline{
     }
     stage("sonar report"){
       steps{
-        sh 'sonar-scanner'
+        /*sh 'sonar-scanner'
         sh 'sonar-report:sonar-report --sonarUrl=http://13.233.167.98:9000 --reportType=html'
-        sh 'sonar-scanner'
-        /*script{
-        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: '/target/funds-1.0-SNAPSHOT/index.html',
-                     reportFiles: 'index.html', reportName: 'SONAR-HTML Report', reportTitles: '', useWrapperFileDirectly: true])
-        }*/
+        sh 'sonar-scanner'*/
+        script{
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, includes: '/target/funds-1.0-SNAPSHOT/index.html', 
+                     keepAll: true , reportDir: 'target/funds-1.0-SNAPSHOT',reportFiles: 'index.html', reportName: 'SONAR-HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+        }
       }
     }
     stage("Docker-login"){
