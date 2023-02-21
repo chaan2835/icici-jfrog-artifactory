@@ -14,7 +14,7 @@ pipeline{
           sh "mvn clean package"
       }
     }
-    stage("jfrog"){
+    /*stage("jfrog"){
       steps{
         withCredentials([usernamePassword(credentialsId: 'jfrog-creds', passwordVariable: 'Chandra@2835', usernameVariable: 'jenkins')]) {
              echo "jfrog stage"
@@ -63,6 +63,6 @@ pipeline{
             }
         
           }
-        }    
+        }  */  
      }
 }
