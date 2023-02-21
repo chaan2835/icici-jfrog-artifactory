@@ -1,6 +1,6 @@
 #/bin/bash
 echo "/root/.jenkins/workspace/icici-funds/target/"
-cd /root/.jenkins/workspace/icici-funds/target/
+sudo cd /root/.jenkins/workspace/icici-funds/target/
 echo "ls -lrt"
 ls -lh 
 artifact_file_name=`ls *.war`
