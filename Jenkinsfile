@@ -14,7 +14,7 @@ pipeline{
           sh "mvn clean package"
       }
     }
-    stage("jfrog"){
+    /*stage("jfrog"){
       steps{
         withCredentials([usernamePassword(credentialsId: 'jfrog-creds', passwordVariable: 'Chandra@2835', usernameVariable: 'jenkins')]) {
              echo "jfrog stage"
@@ -40,7 +40,7 @@ pipeline{
         }
       }
     }
-   /* stage("sonar report"){
+    stage("sonar report"){
       steps{
         sh 'sonar-scanner'
         sh 'sonar-report:sonar-report --sonarUrl=http://13.233.167.98:9000 --reportType=html'
@@ -50,7 +50,7 @@ pipeline{
                      keepAll: true , reportDir: 'target/funds-1.0-SNAPSHOT',reportFiles: 'index.html', reportName: 'SONAR-HTML-Report', reportTitles: '', useWrapperFileDirectly: true])
         }
       }
-    }*/
+    }
     stage("Docker-login"){
       steps{
           sh "docker login -u chaan2835 -pChandra@2835"
@@ -63,6 +63,6 @@ pipeline{
             }
         
           }
-        }       
+        }*/       
      }
 }
